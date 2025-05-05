@@ -71,7 +71,7 @@ elif [[ "$CURRENT_HOUR" -ge 12 && "$CURRENT_HOUR" -lt 18 ]]; then # 12pm - 5:59p
 elif [[ "$CURRENT_HOUR" -ge 18 && "$CURRENT_HOUR" -lt 21 ]]; then # 6pm - 8:59pm (Evening)
     ICON="􀆳" # Sun Set / Evening
 else # 9pm - 5:59am (Night)
-    ICON="􀆹" # Moon / Night
+    ICON="􀆺" # Moon / Night
 fi
 
 # Calculate hours, minutes, seconds from remaining seconds
@@ -80,6 +80,7 @@ MINUTES=$(( (REMAINING_S % 3600) / 60 ))
 SECONDS=$((REMAINING_S % 60))
 
 # Format the output string as ICON HH:MM:SS
-RESPONSE=$(printf "%s %02d:%02d" "$ICON" $HOURS $MINUTES)
+RESPONSE=$(printf "%02dh %02dm" $HOURS $MINUTES)
 
 sketchybar --set $NAME label="$RESPONSE"
+sketchybar --set $NAME icon="$ICON"

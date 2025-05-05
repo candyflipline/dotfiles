@@ -17,11 +17,13 @@ ITEM_DIR="$CONFIG_DIR/items"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top \ 
-          blur_radius=32 \
-          height=32 \ 
+sketchybar --bar position=bottom \
+          blur_radius=10 \
+          height=25 \
+          topmost=window \
           padding_left=10 \
           padding_right=10 \
+          shadow=false \
           color=$BAR_COLOR
 
 ##### Changing Defaults #####
@@ -48,13 +50,15 @@ sketchybar --default "${default[@]}"
 
 # -- Left Side Items --
 source $ITEM_DIR/front_app.sh
-source $ITEM_DIR/coin_prices.sh
 
 # -- Left Side of Notch Items --
 
-# -- Right Side of Notch Items --
+# -- Center Items --
 source $ITEM_DIR/countdown.sh
+source $ITEM_DIR/quote.sh
 source $ITEM_DIR/media.sh
+
+# -- Right Side of Notch Items --
 
 # -- Right Side Items --
 source $ITEM_DIR/calendar.sh
