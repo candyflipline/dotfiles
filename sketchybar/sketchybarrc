@@ -18,7 +18,7 @@ ITEM_DIR="$CONFIG_DIR/items"
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
 sketchybar --bar position=top \ 
-          blur_radius=30 \
+          blur_radius=32 \
           height=32 \ 
           padding_left=10 \
           padding_right=10 \
@@ -47,10 +47,13 @@ default=(
 sketchybar --default "${default[@]}"
 
 # -- Left Side Items --
-source $ITEM_DIR/spaces.sh
 source $ITEM_DIR/front_app.sh
+source $ITEM_DIR/coin_prices.sh
+
+# -- Left Side of Notch Items --
 
 # -- Right Side of Notch Items --
+source $ITEM_DIR/countdown.sh
 source $ITEM_DIR/media.sh
 
 # -- Right Side Items --
